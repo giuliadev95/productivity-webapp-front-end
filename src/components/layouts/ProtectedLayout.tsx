@@ -1,5 +1,7 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
+
+// Library
 import { createClient } from "../../lib/supabase/client";
 
 export function ProtectedLayout() {
