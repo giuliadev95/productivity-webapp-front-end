@@ -11,3 +11,7 @@ Designed as a learning project, with emphasis on modern frontend architecture, a
 # Tech stack:
 
 React, TypeScript, Supabase Auth, PostgreSQL, Netlify
+
+# Resources
+
+- Sidebar starter code: https://www.w3schools.com/howto/howto_js_collapse_sidebar.asp
