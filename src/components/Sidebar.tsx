@@ -1,8 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
-import { createClient } from "../../lib/supabase/client";
+import { createClient } from "../lib/supabase/client";
 
 // constants
-import { sidebarLinks } from "../../constants/SidebarLinks";
+import { sidebarLinks } from "../constants/SidebarLinks";
 
 interface SidebarProps {
   isOpen: boolean;
