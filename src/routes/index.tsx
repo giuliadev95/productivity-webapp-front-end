@@ -7,9 +7,11 @@ import Dashboard from "../components/protected/Dashboard";
 import ForgotPasswordForm from "../components/forms/forgot-password-form";
 import UpdatePasswordForm from "../components/forms/update-password-form";
 import { ProtectedLayout } from "../components/layouts/ProtectedLayout";
+import { RootRedirect } from "../components/auth/RootRedirect";
 
 export const router = createBrowserRouter([
   // public routes
+  { path: "/", element: <RootRedirect /> },
   { path: "/login", element: <LoginForm /> },
   { path: "/sign-up", element: <SignUpForm /> },
   { path: "/auth/forgot-password", element: <ForgotPasswordForm /> },
