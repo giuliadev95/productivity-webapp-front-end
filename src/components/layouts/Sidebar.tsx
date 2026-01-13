@@ -63,8 +63,8 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
 
           <nav className="px-2 py-4">
             <ul className="space-y-2">
-              {sidebarLinks?.map((link, index) => (
-                <li key={index}>
+              {sidebarLinks?.map((link) => (
+                <li key={link.id}>
                   <Link
                     to={link.path}
                     className="block py-3 pl-4 pr-4 text-gray-400 transition-colors hover:text-white hover:bg-zinc-800 rounded-md"
