@@ -15,3 +15,13 @@ React, TypeScript, Supabase Auth, PostgreSQL, Netlify
 # Resources
 
 - Sidebar starter code: https://www.w3schools.com/howto/howto_js_collapse_sidebar.asp
+
+# Testing
+
+- To run tests I used Vitest, @testing-library/react, jsdom .
+- To install dev dependecies for testing, run:  
+   npm install -D vitest @testing-library/react @testing-library/jest-dom jsdom
+- Helps: in the console press:
+  a: rerun tests
+  r: retrun tests suite (same as a)
+  q: quit testing session

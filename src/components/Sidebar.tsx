@@ -1,8 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
-import { createClient } from "../../lib/supabase/client";
+import { createClient } from "../lib/supabase/client";
 
 // constants
-import { sidebarLinks } from "../../constants/SidebarLinks";
+import { sidebarLinks } from "../constants/SidebarLinks";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -50,7 +50,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
           type="button"
           onClick={onClose}
           className="absolute top-3 right-4 text-4xl text-gray-300 hover:text-white hover:cursor-pointer"
-          aria-label="Close sidebar"
+          aria-label="close sidebar"
         >
           &times;
         </button>

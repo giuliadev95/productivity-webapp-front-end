@@ -3,8 +3,8 @@ import { useEffect, useState, type JSX } from "react";
 
 // Components
 import { Spinner } from "../ui/spinner";
-import { Sidebar } from "./Sidebar";
-import { Navbar } from "./Navbar";
+import { Sidebar } from "../Sidebar";
+import { Navbar } from "../Navbar";
 
 // Libraries
 import { createClient } from "../../lib/supabase/client";
