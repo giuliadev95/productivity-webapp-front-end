@@ -2,29 +2,27 @@ type Todo = {
   id: string;
   name: string;
 };
-type TodoList = Todo[];
+
+type CompleteTodo = Required<Todo>;
+type TodoList = CompleteTodo[];
 
 interface TodoListProps {
   todoList: TodoList;
 }
 
-export const todos: TodoList = [
-  {
-    id: "0",
-    name: "Fare la spesa",
-  },
-  {
-    id: "1",
-    name: "Annaffiare le piante",
-  },
-];
+export const todos: TodoList = [];
 
 export const TodoList = (
   { todoList }: TodoListProps, // properties are: TodoList corresponsing to the array of 'todos' objects - I'll have to import them aside TodoList in the App.tsx
-) => (
-  <ul>
-    {todoList.map((todo) => {
-      return <li key={todo.id}>{todo.name}</li>;
-    })}
-  </ul>
-);
+) => {
+  if (todoList.length === 0) {
+    return <p>Your list is empty. Please, add at least one task.</p>;
+  }
+  return (
+    <ul>
+      {todoList.map((todo) => {
+        return <li key={todo.id}>{todo.name}</li>;
+      })}
+    </ul>
+  );
+};
