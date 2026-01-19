@@ -1,16 +1,18 @@
-type Todo = {
+export type Todo = {
   id: string;
   name: string;
 };
 
-type CompleteTodo = Required<Todo>;
-type TodoList = CompleteTodo[];
-
-interface TodoListProps {
-  todoList: TodoList;
+export function createTodo(name: string): Todo {
+  return {
+    id: crypto.randomUUID(),
+    name,
+  };
 }
 
-export const todos: TodoList = [];
+interface TodoListProps {
+  todoList: Todo[];
+}
 
 export const TodoList = (
   { todoList }: TodoListProps, // properties are: TodoList corresponsing to the array of 'todos' objects - I'll have to import them aside TodoList in the App.tsx
