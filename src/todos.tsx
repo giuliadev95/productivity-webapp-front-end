@@ -14,9 +14,7 @@ interface TodoListProps {
   todoList: Todo[];
 }
 
-export const TodoList = (
-  { todoList }: TodoListProps, // properties are: TodoList corresponsing to the array of 'todos' objects - I'll have to import them aside TodoList in the App.tsx
-) => {
+export const TodoList = ({ todoList }: TodoListProps) => {
   if (todoList.length === 0) {
     return <p>Your list is empty. Please, add at least one task.</p>;
   }
