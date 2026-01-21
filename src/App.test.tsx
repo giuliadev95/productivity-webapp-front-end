@@ -1,4 +1,4 @@
-import { expect, test, vi, describe, it } from "vitest";
+import { expect, test, describe } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
@@ -43,12 +43,26 @@ test("Correctly add a new todo item on button click", ()=>{
 
 })
   */
+// Add a todo item to the list
+describe("Behaviour of function addTodo", () => {
+  test("Add a todo when input is not empty", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    const input = screen.getByPlaceholderText("Add a new task");
+    await user.type(input, "This is a mocked input");
 
-describe("Behaviour of function addTodo", async () => {
+    const button = screen.getByRole("button", { name: "+" });
+    await user.click(button);
+    expect(screen.getByText("This is a mocked input")).toBeInTheDocument();
+  });
+});
+
+// Display an error in the UI if the user tries to add an empty todo item to the list
+test("Cannot add a todo when input is empty", async () => {
   const user = userEvent.setup();
   render(<App />);
-  const input = screen.getByPlaceholderText("Add a new task");
-  await user.type(input, "This is a mocked input");
 
-  const button = screen.getByRole(button, { name: "+" });
+  const button = screen.getByRole("button", { name: "+" });
+  await user.click(button);
+  expect(screen.getByText("You can't add an empty task!")).toBeInTheDocument();
 });
